@@ -1,0 +1,237 @@
+.container-slider-bottom {
+    height: 100%;
+    width: 100%;
+    position: relative;
+    margin: 0;
+    border: 0 0 0 1px solid #a49a93;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.filter {
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    background: #1E1E1E;
+    display: flex;
+    flex-direction: column; 
+    align-items: center;
+    justify-content: center;
+}
+
+.filter h1 {
+    font-size: xx-large;
+    font-weight: bolder;
+    color: white;
+    margin-bottom: 20px; 
+}
+
+.filter-section {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* Center the items horizontally */
+    width: 100%; /* Ensure all items take up the full width */
+}
+
+.filter-section > * {
+    flex: 1 0 auto; /* Each item takes up full width initially */
+    margin: 5px; /* Add spacing between the ReactSelect components */
+    max-width: calc(50% - 10px);
+}
+
+.btn-submit {
+    height: 35px;
+    width: 40px;
+    background: #D55107;
+    color: white;
+    font-weight: bold;
+    border: 1px solid white;
+    border-radius: 10px;
+}
+.btn-submit:hover {
+    cursor: pointer;
+    opacity: 70%;
+    border: 2px solid white;
+}
+
+.filter-footer {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    width: 100%;
+    border: 0 1px solid #a49a93;
+    border-radius: 20px;
+    margin-bottom: -42px;
+}
+
+.filter-footer > div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center; /* Center align the content */
+    flex-direction: column; /* Ensure icon and text are stacked */
+}
+
+.filter-footer > div img {
+    margin-bottom: 10px; /* Add space between icon and text */
+}
+
+.filter-footer .text {
+    font-weight: bolder;
+}
+
+.filter-footer > div .text span,
+.filter-footer > div .text p.text-description {
+    margin: 0;
+    text-wrap: wrap;
+    text-overflow: ellipsis ;
+}
+
+.text {
+    margin-left: 10px;
+    margin-top: 10px;
+    font-weight: bolder;
+}
+
+.filter-footer .text-description {
+    font-size: 1rem;
+    text-overflow: ellipsis;
+    text-align: center; /* Center align the text */
+    margin-top: 10px; /* Add space between title and description */
+}
+
+
+.dropdown-datepick .react-datepicker-wrapper {
+    width: 100%;
+    height: 100%;
+}
+
+.dropdown-datepick .react-datepicker__input-container input {
+    height: 38px;
+    width: 100%;
+    padding: 0 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-size: 16px;
+    text-align: center;
+}
+
+.dropdown .css-yk16xz-control {
+    height: 100%;
+    width: 100%;
+}
+
+.filter-section .dropdown label {
+    align-items: center;
+    display: flex;
+    font-size: 15px;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    color: white;
+}
+
+.filter-section .dropdown-datepick label {
+    align-items: center;
+    display: flex;
+    font-size: 15px;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    color: white;
+}
+
+.banner-btn {
+    display: flex;
+    flex-direction: row;
+    margin: -12px 11px -10px 10px;
+}
+
+.banner-container {
+    margin: 0 auto !important;
+    max-width: 133rem !important;
+    padding: 0 2.5rem !important;
+}
+
+.banner-content {
+    align-items: center;
+    color: #fff;
+    display: flex;
+    height: 100%;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.banner-content__text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.banner-content__text h2 {
+    font-size: 2.5rem;
+}
+
+.banner-content__text p span {
+    color: #ff4d30;
+    font-weight: 500;
+}
+
+.banner-content__text p {
+    font-size: 1.4rem;
+    text-align: center;
+}
+
+.btn-booknow {
+    height: 35px;
+    width: 110px;
+    background: #D55107;
+    color: white;
+    font-weight: bold;
+    border: 1px solid white;
+    border-radius: 10px;
+    margin-left: 10px;
+}
+
+@media screen and (max-width: 768px) {
+    .filter {
+        height: 80%;
+    }
+
+    .filter h1 {
+        font-size: 1rem;
+    }
+    .filter-footer > div {
+        flex-direction: column; /* Switch to column layout on smaller screens */
+    }
+
+    .filter-section > * {
+        flex-basis: calc(50% - 10px); /* Each item takes up 50% of the container width */
+        max-width: calc(50% - 10px); 
+    }
+
+    .filter-footer > div img {
+        height: 20px;
+        width: 20px;
+    }
+    .text {
+        font-size: 0.8rem;
+    }
+
+    .btn-submit {
+        height: 43px;
+
+    }
+
+    .text-description {
+        display: none;
+    }
+}
+
+/* .react-datepicker__view-calendar-icon input {
+    height: 33px;
+    width: 201px;
+    border: 1px solid white;
+    border-radius: 4px;
+} */

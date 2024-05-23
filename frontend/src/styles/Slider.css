@@ -1,0 +1,153 @@
+.slider {
+    height: 100%;
+    width: 90%;
+    position: relative;
+    margin: 1% 0 0 5%;
+    border: 0 0 0 1px solid white;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn-prev {
+    order: 1;
+    height: 40px;
+    width: 40px;
+    background-color: #D55107;
+    font-size: xx-large;
+    font-weight: bolder;
+    color: white;
+    border: 1px solid white;
+    border-radius: 20px;
+}
+
+.btn-next {
+    order: 3;
+    height: 40px;
+    width: 40px;
+    background-color: #D55107;
+    font-size: xx-large;
+    font-weight: bolder;
+    color: white;
+    border: 1px solid white;
+    border-radius: 20px;
+}
+
+.btn-prev:hover,
+.btn-next:hover {
+    cursor: pointer;
+    opacity: 80%;
+}
+
+
+.content {
+    order: 2;
+    /*flex: 1;
+    height: 100%;
+    width: 100%;
+    margin: 0; */
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center content horizontally */
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    color: white;
+    position: relative;
+}
+
+h1 {
+    margin: 0;
+    font-size: 4rem;
+    font-weight: bolder;
+}
+
+.text-ryr {
+    color: #D55107;
+    font-size: 1.5rem;
+    font-weight: bolder;
+}
+
+.left-section,
+.right-section {
+    width: 50%;
+    height: 100%;
+    position: absolute;
+    margin: 5% 0 0 0;
+}
+
+.left-section {
+    left: 0;
+}
+
+.left-section h2 {
+    margin: 10% 0 0 5%; 
+    font-size: xx-large;
+    color: #D55107;
+    font-weight: bolder;
+}
+.left-section span {
+    margin: 10% 0 0 5%; 
+    font-size: x-large;
+    font-weight: bolder;
+}
+
+.btn-div button {
+    height: 35px;
+    width: 95px;
+    margin: 5% 0 0 12%;
+    background: #D55107;
+    color: white;
+    font-weight: bold;
+    border: 1px solid white;
+    border-radius: 10px;
+}
+
+.btn-booknow:hover {
+    cursor: pointer;
+    opacity: 90%;
+}
+
+.right-section {
+    right: 0;
+    margin: 0;
+    justify-content: center;
+}
+
+.right-section img {
+    margin: 10% 0 0 0;
+    transition: 1s ease;
+}
+
+
+@media screen and (max-width: 768px) {
+    h1 {
+        font-size: 1rem;
+    }
+
+    .right-section {
+        right: 0;
+        margin: 0;
+        justify-content: center;
+    }
+    .left-section h2 {
+        margin: 50% 0 0 0%; 
+        font-size: 1.5rem;
+    }
+    .left-section span {
+        font-size: 1rem;
+    }
+
+    .right-section img {
+        margin: 25% 0 0 0;
+        position: relative;
+        top: 20%;
+        height: 75%;
+        width: 100%;
+    }
+
+    .btn-div button {
+        margin: 10% 0 0 0%;
+    }
+}
