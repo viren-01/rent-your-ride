@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import '../styles/Slider.css';
+import '../css/Slider.css';
 import BookCar from './BookCar';
 
 export default function Slider({ contents }) {

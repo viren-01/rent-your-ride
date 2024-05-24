@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import Navbar from '../components/Navbar';
-import '../styles/Contact.css';
+import '../css/Contact.css';
 import { contact } from '../store/slices/CommonSlice'
 import { toast } from 'react-toastify';
 

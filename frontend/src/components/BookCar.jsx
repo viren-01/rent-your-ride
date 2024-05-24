@@ -1,5 +1,5 @@
 import BookCarModal from "./common/BookCarModal";
-// import '../styles/BookCar.css';
+// import '../css/BookCar.css';
 
 export default function BookCar(props) {
     let { show, setShow } = props

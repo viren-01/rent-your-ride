@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import Navbar from '../components/Navbar';
 import { useDispatch, useSelector } from 'react-redux';
-import '../styles/Vehicles.css';
+import '../css/Vehicles.css';
 import { getVehicleListing, updateShowPopup } from '../store/slices/CommonSlice';
 import { useNavigate } from 'react-router-dom';
 
