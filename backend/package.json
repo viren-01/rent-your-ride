@@ -4,7 +4,8 @@
   "description": "Backend application of rent-your-ride",
   "main": "index.js",
   "scripts": {
-    "start": "tsnd --respawn server.ts"
+    "start": "tsnd --respawn server.ts",
+    "start:prod": "node build/server.js"
   },
   "repository": {
     "type": "git",
