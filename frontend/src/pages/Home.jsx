@@ -1,7 +1,7 @@
 import Navbar from '../components/Navbar';
 import Slider from '../components/Slider';
 import SliderBottom from '../components/SliderBottom';
-import '../css/Home.css';
+import '../Home.css';
 
 export default function Home() {
     return (

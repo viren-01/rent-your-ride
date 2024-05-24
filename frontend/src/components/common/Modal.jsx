@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import '../../css/Modal.css';
+import '../../Modal.css';
 
 export default function Modal({onClose, isOpen}) {
     const [isVisible, setIsVisible] = useState(isOpen);

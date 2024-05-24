@@ -1,6 +1,6 @@
 import ReactSelect from './ReactSelect';
 import { useCallback, useEffect, useState } from 'react';
-import '../../css/BookCarModal.css';
+import '../../BookCarModal.css';
 import Datepicker from './Datepicker';
 import { addDays } from 'date-fns';
 import { createBooking, getCityListing, getVehicleListing } from '../../store/slices/CommonSlice';

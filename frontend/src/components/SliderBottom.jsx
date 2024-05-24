@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import '../css/SliderBottom.css';
+import '../SliderBottom.css';
 // import ReactSelect from './common/ReactSelect';
 import BookCar from './BookCar';
 // import Datepicker from './common/Datepicker';
