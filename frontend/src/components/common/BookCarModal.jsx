@@ -54,13 +54,10 @@ export default function BookCarModal({ isOpen, setShow }) {
     useEffect(() => {
         if (Object.keys(commonState?.showPopup).length) {
             const car = commonState?.showPopup?.value
-            
-            setInputFields((prev) => {
-                return { ...prev, car }
-            })
+            setInputFields({ 'car': car })
             dispatch(showPopup({}))
         }
-        //disable-react-hooks
+        //eslint-disable-next-line
     }, [commonState?.showPopup])
 
     const closeModal = () => {
@@ -76,7 +73,6 @@ export default function BookCarModal({ isOpen, setShow }) {
             setErrors(formErrors)
         }
 
-        console.log("KEKEKE", key, value)
         setInputFields((prev) => ({ ...prev, [key]: value }))
     }
 
@@ -92,8 +88,6 @@ export default function BookCarModal({ isOpen, setShow }) {
             closeModal()
         }
     }
-
-    console.log("SSSS", inputFields, vehicles)
     /**
      * function for validating form 
      * @returns true if error is found
@@ -133,11 +127,11 @@ export default function BookCarModal({ isOpen, setShow }) {
                                 <div className="booking-modal-car-dates">
                                     <h5>Location & Date</h5>
                                     <span>
-                                        <img src='/pin.svg' />
+                                        <img src='/pin.svg' alt='pickup-logo' />
                                         <div>
                                             <h6>Pick-Up Date & Time*</h6><br />
                                             <Datepicker
-                                                placeholder={"Select Pick-up Date"}
+                                                placeholder={`\u00A0Select Pick-up Date`}
                                                 startDate={addDays(new Date(), 1)}
                                                 showIcon={true}
                                                 onChange={(e) => handleInputChange('pickup_date', e)}
@@ -150,11 +144,11 @@ export default function BookCarModal({ isOpen, setShow }) {
                                 </div>
                                 <div className="booking-modal-car-dates">
                                     <span>
-                                        <img src='/pin.svg' />
+                                        <img src='/pin.svg' alt='dropoff-logo' />
                                         <div>
                                             <h6>Drop-Off Date & Time*</h6><br />
                                             <Datepicker
-                                                placeholder={"Select Drop-off Date"}
+                                                placeholder={"\u00A0Select Drop-off Date"}
                                                 startDate={addDays(new Date(), 1)}
                                                 showIcon={true}
                                                 onChange={(e) => handleInputChange('dropoff_date', e)}
@@ -166,7 +160,7 @@ export default function BookCarModal({ isOpen, setShow }) {
                                 </div>
                                 <div className="booking-modal-car-dates">
                                     <span>
-                                        <img src='/pin.svg' />
+                                        <img src='/pin.svg' alt='pickup-city-logo' />
 
                                         <div>
                                             <h6>Pick-up Location*</h6>
@@ -184,7 +178,7 @@ export default function BookCarModal({ isOpen, setShow }) {
                                 </div>
                                 <div className="booking-modal-car-dates">
                                     <span>
-                                        <img src='/pin.svg' />
+                                        <img src='/pin.svg' alt='dropof-city-logo' />
 
                                         <div>
                                             <h6>Drop-Off Location*</h6>
@@ -214,7 +208,7 @@ export default function BookCarModal({ isOpen, setShow }) {
                                                 options={vehicles}
                                                 placeholder={"Car Model*"}
                                                 onChange={(e) => handleInputChange('car', e.value)}
-                                                value={vehicles?.find((vehicle) => vehicle.value === inputFields?.car)}
+                                                value={vehicles?.find((car) => car.value === inputFields?.car)}
                                             />
                                             {errors?.['car'] && <p className="error-modal">This field is required.</p>}
                                         </div>
@@ -238,7 +232,7 @@ export default function BookCarModal({ isOpen, setShow }) {
                                     </span>
                                     <span>
                                         <label>Phone Number <b>*</b></label>
-                                        <input type="tel" placeholder="Enter your phone number" onChange={(e) => handleInputChange('phone', e.target.value)} value={inputFields?.['phone']} />
+                                        <input type="tel" placeholder="Enter your phone number" onChange={(e) => handleInputChange('phone', e.target.value)} value={inputFields?.['phone']} maxLength={10}/>
                                         {errors?.['phone'] && <p className="error-modal">This field is required.</p>}
                                     </span>
                                     <span>

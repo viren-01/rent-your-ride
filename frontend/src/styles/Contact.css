@@ -112,3 +112,8 @@
     background-color: #fa4226;
   }
   
+  .error-modal-contact {
+    color: red !important;
+    font-size: 14px !important;
+    margin-top: -22px;
+  }

@@ -21,7 +21,7 @@ const CommonSlice = createSlice({
             state.showPopup = action.payload
         }
     }
-}) 
+})
 
 export const { cityListing, vehicleListing, showPopup } = CommonSlice.actions
 
@@ -31,8 +31,8 @@ export default CommonSlice.reducer
 export const getCityListing = async (dispatch) => {
     try {
         const response = await CommonService.getCityList()
-        if(response?.status === 200) {
-            if(response?.data) {
+        if (response?.status === 200) {
+            if (response?.data) {
                 dispatch(cityListing(response?.data?.data || []))
                 return response.data
             }
@@ -50,8 +50,8 @@ export const getCityListing = async (dispatch) => {
 export const createBooking = async (params) => {
     try {
         const response = await BookingService.createBooking(params)
-        if(response?.status === 200) {
-            if(response?.data) {
+        if (response?.status === 200) {
+            if (response?.data) {
                 return response.data
             }
         } else {
@@ -69,8 +69,8 @@ export const createBooking = async (params) => {
 export const getVehicleListing = async (dispatch) => {
     try {
         const response = await CommonService.getVehicleList()
-        if(response?.status === 200) {
-            if(response?.data) {
+        if (response?.status === 200) {
+            if (response?.data) {
                 dispatch(vehicleListing(response?.data?.data || []))
                 return response.data
             }
@@ -89,5 +89,21 @@ export const updateShowPopup = (params) => async (dispatch) => {
         dispatch(showPopup(params))
     } catch (error) {
         return
+    }
+}
+
+export const contact = async (params) => {
+    try {
+        const response = await CommonService.contact(params)
+        if (response?.status === 200) {
+            if (response?.data) {
+                return response.data
+            }
+        } else {
+            toast.error(response?.data?.error || 'error occured')
+            return
+        }
+    } catch (error) {
+        return error
     }
 }

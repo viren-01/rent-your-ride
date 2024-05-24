@@ -4,14 +4,12 @@ import '../styles/SliderBottom.css';
 import BookCar from './BookCar';
 // import Datepicker from './common/Datepicker';
 import { useNavigate } from 'react-router-dom';
-import { useDispatch, useSelector } from 'react-redux';
-import { showPopup } from '../store/slices/CommonSlice';
+import { useSelector } from 'react-redux';
 
 export default function SliderBottom(props) {
     const [showBookCarModal, setShowBookCarModal] = useState(false)
     const commonState = useSelector((state) => state.common)
    
-    const dispatch = useDispatch()
     const navigate = useNavigate()
 
     const handleBookNowClick = () => {
@@ -27,7 +25,7 @@ export default function SliderBottom(props) {
         if(Object.keys(commonState?.showPopup).length) {
             setShowBookCarModal(true)
         }
-        //disable-react-hooks
+        //eslint-disable-next-line
     }, [commonState?.showPopup])
 
     return (

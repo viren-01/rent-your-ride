@@ -8,6 +8,7 @@ export default function ReactSelect(props) {
                 onChange={props.onChange}
                 options={props.options || []}
                 placeholder={props.placeholder || ''}
+                value={props.value}
             />
         </div>
     );

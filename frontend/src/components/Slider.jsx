@@ -31,7 +31,7 @@ export default function Slider({ contents }) {
             <button className='btn-prev' onClick={() => goToPrevious()}>{"<"}</button>
             <div className="content">
                 <span className='text-ryr'>{"RENT YOUR RIDE NOW"}</span>
-                <h1>FAST & AFFORDABLE</h1>
+                { !showBookCarModal && <h1>FAST & AFFORDABLE</h1>}
                 <div className='left-section'>
                     <h2>{contents[currentIndex]['type']}</h2>
                     <span>{contents[currentIndex]['price']}</span>

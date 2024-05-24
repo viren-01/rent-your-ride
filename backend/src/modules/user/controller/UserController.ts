@@ -45,9 +45,7 @@ class UserController {
             const token = this.generateToken({ ...user })
             return ApiController.sendSuccessResponse(req, res, { token })
 
-        } catch (error) {
-            console.log(error);
-            
+        } catch (error) {            
             return ApiController.sendErrorResponse(req, res, error, 500)
         }
     }

@@ -8,6 +8,10 @@ class CommonService {
     getVehicleList() {
         return MasterService.post('/vehicle/getAll')
     }
+
+    contact(params) {
+        return MasterService.post('/common/contact', params)
+    }
 }
 
 const service = new CommonService()

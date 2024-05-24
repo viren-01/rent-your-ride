@@ -22,8 +22,8 @@ class MailerService {
                     minVersion: "TLSv1.2"
                 },
                 auth: {
-                    user: process.env.SMTP_USER || '749cf3001@smtp-brevo.com',
-                    pass: process.env.SMTP_PASS || '16PXrUcktS3hVmdM',
+                    user: process.env.SMTP_USER,
+                    pass: process.env.SMTP_PASS,
                 }
             })
 

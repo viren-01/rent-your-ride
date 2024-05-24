@@ -21,6 +21,7 @@ export default function Vehicle() {
         } else {
             setVehicles(commonState?.vehicleList)
         }
+        //eslint-disable-next-line
     }, [])
 
     const handleBookRideClick = (car) => {
@@ -39,7 +40,7 @@ export default function Vehicle() {
                             return (
                                 <div className='vehicle-grid-ele' key={car.url + idx}>
                                     <div className='grid-img'>
-                                        <img src={img} />
+                                        <img src={img} alt={`car-img-${idx}`}/>
                                         <div className='grid-box'>
                                             <div className='grid-item-box'>
                                                 <div className='grid-item-name'>
@@ -58,10 +59,10 @@ export default function Vehicle() {
                                                 <span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="tabler-icon tabler-icon-car"><path d="M7 17m-2 0a2 2 0 1 0 4 0a2 2 0 1 0 -4 0"></path><path d="M17 17m-2 0a2 2 0 1 0 4 0a2 2 0 1 0 -4 0"></path><path d="M5 17h-2v-6l2 -5h9l4 5h1a2 2 0 0 1 2 2v4h-2m-4 0h-6m-6 -6h15m-6 0v-5"></path></svg> &nbsp; {car.label.split(' ')[0]}</span>
                                                 <span style={{ textAlign: 'right' }}>{car.seating_capacity} &nbsp; <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="tabler-icon tabler-icon-car"><path d="M7 17m-2 0a2 2 0 1 0 4 0a2 2 0 1 0 -4 0"></path><path d="M17 17m-2 0a2 2 0 1 0 4 0a2 2 0 1 0 -4 0"></path><path d="M5 17h-2v-6l2 -5h9l4 5h1a2 2 0 0 1 2 2v4h-2m-4 0h-6m-6 -6h15m-6 0v-5"></path></svg></span>
                                                 <span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="tabler-icon tabler-icon-car"><path d="M7 17m-2 0a2 2 0 1 0 4 0a2 2 0 1 0 -4 0"></path><path d="M17 17m-2 0a2 2 0 1 0 4 0a2 2 0 1 0 -4 0"></path><path d="M5 17h-2v-6l2 -5h9l4 5h1a2 2 0 0 1 2 2v4h-2m-4 0h-6m-6 -6h15m-6 0v-5"></path></svg> &nbsp; {['Automatic', 'Manual'][Math.floor(Math.random() * 2)]}</span>
-                                                <span style={{ textAlign: 'right' }}>Diesel &nbsp; <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="tabler-icon tabler-icon-car"><path d="M7 17m-2 0a2 2 0 1 0 4 0a2 2 0 1 0 -4 0"></path><path d="M17 17m-2 0a2 2 0 1 0 4 0a2 2 0 1 0 -4 0"></path><path d="M5 17h-2v-6l2 -5h9l4 5h1a2 2 0 0 1 2 2v4h-2m-4 0h-6m-6 -6h15m-6 0v-5"></path></svg></span>
+                                                <span style={{ textAlign: 'right' }}>{['Diesel', 'Petrol']?.[Math.floor(Math.random() * 2)]} &nbsp; <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="tabler-icon tabler-icon-car"><path d="M7 17m-2 0a2 2 0 1 0 4 0a2 2 0 1 0 -4 0"></path><path d="M17 17m-2 0a2 2 0 1 0 4 0a2 2 0 1 0 -4 0"></path><path d="M5 17h-2v-6l2 -5h9l4 5h1a2 2 0 0 1 2 2v4h-2m-4 0h-6m-6 -6h15m-6 0v-5"></path></svg></span>
                                             </div>
                                             <div className='grid-item-price-btn'>
-                                                <a onClick={() => handleBookRideClick(car)}> Book Ride </a>
+                                                <a href={() => false} onClick={() => handleBookRideClick(car)}> Book Ride </a>
                                             </div>
                                         </div>
                                     </div>

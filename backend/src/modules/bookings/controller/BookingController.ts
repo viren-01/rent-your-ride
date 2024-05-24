@@ -8,6 +8,7 @@ import MailerService from "../../../services/MailerService";
 import { format } from 'date-fns';
 import CityModel from "../../common/model/CityModel";
 import CommonController from "../../common/controller/CommonController";
+import VehicleModel from "../../vehicles/models/VehicleModel";
  
 class BookingController {
     async createBooking(req: Request, res: Response) {
@@ -58,14 +59,16 @@ class BookingController {
 
             //fetch city
             const cities: any = await CityModel.find({})
-            const pickupCity = cities?.find((city: any) => city.id == pickup_location)?.label || ``
-            const dropoffCity = cities?.find((city: any) => city.id == dropoff_location)?.label || ``
+            const pickupCity = cities?.find((city: any) => city.value == pickup_location)?.label || ``
+            const dropoffCity = cities?.find((city: any) => city.value == dropoff_location)?.label || ``
+            const vehicles: any = await VehicleModel.find({})
+            const selectedCar = vehicles?.find((vehicle: any) => vehicle.value === car)?.label || ''
 
             //send email for booking confirmation
             //replace variables from template
             let templateVariables = {
                 customer_name: firstname,
-                car_model: car,
+                car_model: selectedCar,
                 start_date: pickupCity + " " + format(pickup_date, 'dd-MM-yyyy HH:mm:ss'),
                 end_date: dropoffCity + " " + format(dropoff_date, 'dd-MM-yyyy HH:mm:ss')
             }
@@ -75,7 +78,8 @@ class BookingController {
             let mailParams = {
                 email,
                 text: template,
-                subject: 'Booking Confirmation: Rent Your Ride'
+                subject: 'Booking Confirmation: Rent Your Ride',
+                type: 'booking'
             }
             MailerService.sendMail(mailParams)
 
