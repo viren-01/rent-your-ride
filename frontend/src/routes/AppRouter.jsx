@@ -4,7 +4,7 @@ import Contact from "../pages/Contact";
 import Vehicle from "../pages/Vehicles";
 export default function AppRouter() {
     return (
-        <Router>
+        <Router basename={process.env.PUBLIC_URL}>
             <Routes>
                 <Route path="/" Component={Home}/>
                 <Route path="/contact" Component={Contact}/>
