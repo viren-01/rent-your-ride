@@ -40,7 +40,7 @@ class VehicleModel extends Vehicle {
     async find(params: any) {
         return new Promise(async (resolve, reject) => {
             try {
-                let sql = `SELECT B.name as vehicle_type, CONCAT(make, " ", model, " ", version) as label, seating_capactiy, url, A.id as value 
+                let sql = `SELECT B.name as vehicle_type, CONCAT(make, ' ', model, ' ', version) as label, seating_capactiy, url, A.id as value 
                             FROM vehicle A JOIN vehicle_type B ON A.vehicle_type = B.id`
                 const response = await sequelize.query(sql, { type: QueryTypes.SELECT, raw: true })
                 return resolve(response)
