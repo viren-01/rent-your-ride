@@ -1,21 +1,34 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import '../styles/SliderBottom.css';
 // import ReactSelect from './common/ReactSelect';
 import BookCar from './BookCar';
 // import Datepicker from './common/Datepicker';
-import { useNavigate} from 'react-router-dom'; 
+import { useNavigate } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
+import { showPopup } from '../store/slices/CommonSlice';
 
-export default function SliderBottom() {
+export default function SliderBottom(props) {
     const [showBookCarModal, setShowBookCarModal] = useState(false)
+    const commonState = useSelector((state) => state.common)
+   
+    const dispatch = useDispatch()
     const navigate = useNavigate()
 
     const handleBookNowClick = () => {
         setShowBookCarModal(true)
     }
-    
+
     const handleBrowseRidesClick = () => {
         navigate('/vehicles')
     }
+
+
+    useEffect(() => {
+        if(Object.keys(commonState?.showPopup).length) {
+            setShowBookCarModal(true)
+        }
+        //disable-react-hooks
+    }, [commonState?.showPopup])
 
     return (
         <>
@@ -79,11 +92,11 @@ export default function SliderBottom() {
                     </div> */}
                     <div className='banner-container'>
                         <div className='banner-content'>
-                            <div class="banner-content__text">
+                            <div className="banner-content__text">
                                 <h2>Save big with our cheap car rental!</h2>
                                 <div className='banner-btn'>
-                                <button className='btn-booknow' onClick={() => handleBookNowClick()}>Book Now</button>
-                                <button className='btn-booknow' onClick={() => handleBrowseRidesClick()}>Browse Rides</button>
+                                    <button className='btn-booknow' onClick={() => handleBookNowClick()}>Book Now</button>
+                                    <button className='btn-booknow' onClick={() => handleBrowseRidesClick()}>Browse Rides</button>
                                 </div>
                                 <p>Top Rides. Local Suppliers. <span>24/7</span> Support.</p>
                             </div>

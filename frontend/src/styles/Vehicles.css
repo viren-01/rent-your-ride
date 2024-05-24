@@ -42,10 +42,10 @@
     flex-direction: column;
 }
 
-@media (max-width: 400px) {
+@media (max-width: 1170px) {
     .vehicle-grid-ele {
         grid-template-columns: 1fr;
-        width: 100%;
+        width: 21rem;
    }
 }
 
@@ -110,7 +110,7 @@
     border-bottom: 1px solid #c6c6c6;
 }
 .grid-item-price-detail span {
-    font-size: 1.8rem;
+    font-size: 1.4rem;
     font-weight: 500;
     color: #777;
     text-align: left;

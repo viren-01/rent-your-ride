@@ -225,3 +225,8 @@
     margin-bottom: 5px;
     font-size: 15px;
 }
+
+.error-modal {
+    color: red !important;
+    font-size: 14px !important;
+}

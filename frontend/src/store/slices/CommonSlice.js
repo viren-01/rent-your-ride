@@ -6,16 +6,24 @@ import BookingService from "../../services/BookingService"
 const CommonSlice = createSlice({
     name: 'common',
     initialState: {
-        cityList: []
+        cityList: [],
+        vehicleList: [],
+        showPopup: {}
     },
     reducers: {
         cityListing: (state, action) => {
             state.cityList = action.payload
+        },
+        vehicleListing: (state, action) => {
+            state.vehicleList = action.payload
+        },
+        showPopup: (state, action) => {
+            state.showPopup = action.payload
         }
     }
 }) 
 
-export const { cityListing } = CommonSlice.actions
+export const { cityListing, vehicleListing, showPopup } = CommonSlice.actions
 
 export default CommonSlice.reducer
 
@@ -52,6 +60,34 @@ export const createBooking = async (params) => {
         }
     } catch (error) {
         toast.error(error)
+        return
+    }
+}
+
+
+
+export const getVehicleListing = async (dispatch) => {
+    try {
+        const response = await CommonService.getVehicleList()
+        if(response?.status === 200) {
+            if(response?.data) {
+                dispatch(vehicleListing(response?.data?.data || []))
+                return response.data
+            }
+        } else {
+            toast.error(response?.data?.message || 'error occured')
+            return
+        }
+    } catch (error) {
+        toast.error(error)
+        return
+    }
+}
+
+export const updateShowPopup = (params) => async (dispatch) => {
+    try {
+        dispatch(showPopup(params))
+    } catch (error) {
         return
     }
 }

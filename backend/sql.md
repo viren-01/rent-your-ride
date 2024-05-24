@@ -99,3 +99,30 @@ ADD COLUMN zipcode VARCHAR(10) AFTER city
 
 ALTER TABLE bookings
 ADD COLUMN user_id INT NOT NULL AFTER id
+
+
+INSERT INTO `rent-your-ride`.`vehicle` (`vehicle_type`, `make`, `model`, `version`, `seating_capactiy`) VALUES ('2', 'BMW', '3 Series', '330i M Sport', '5');
+INSERT INTO `rent-your-ride`.`vehicle` (`vehicle_type`, `make`, `model`, `version`, `seating_capactiy`) VALUES ('2', 'BMW', '3 Series', '320d Luxury', '5');
+INSERT INTO `rent-your-ride`.`vehicle` (`vehicle_type`, `make`, `model`, `version`, `seating_capactiy`) VALUES ('2', 'BMW', '5 Series', '530i M Sport', '5');
+INSERT INTO `rent-your-ride`.`vehicle` (`vehicle_type`, `make`, `model`, `version`, `seating_capactiy`) VALUES ('2', 'BMW', '5 Series', '520d Luxury', '5');
+INSERT INTO `rent-your-ride`.`vehicle` (`vehicle_type`, `make`, `model`, `version`, `seating_capactiy`) VALUES ('3', 'BMW', '1 Series', '118d', '5');
+INSERT INTO `rent-your-ride`.`vehicle` (`vehicle_type`, `make`, `model`, `version`, `seating_capactiy`) VALUES ('1', 'BMW', 'X', '3', '5');
+INSERT INTO `rent-your-ride`.`vehicle` (`vehicle_type`, `make`, `model`, `version`, `seating_capactiy`) VALUES ('1', 'BMW', 'x', '5', '5');
+
+ALTER table vehicle
+ADD COLUMN URL VARCHAR(100) AFTER vehicle_type
+
+
+UPDATE `rent-your-ride`.`vehicle` SET `URL` = 'baleno-sigma-bg.png' WHERE (`id` = '1');
+UPDATE `rent-your-ride`.`vehicle` SET `URL` = 'baleno-delta-bg.png' WHERE (`id` = '2');
+UPDATE `rent-your-ride`.`vehicle` SET `URL` = 'breeza-lxi-bg.png' WHERE (`id` = '3');
+UPDATE `rent-your-ride`.`vehicle` SET `URL` = 'breeza-vxi-bg.png' WHERE (`id` = '4');
+UPDATE `rent-your-ride`.`vehicle` SET `URL` = 'bmw-330i-bg.png' WHERE (`id` = '8');
+UPDATE `rent-your-ride`.`vehicle` SET `URL` = 'bmw-320d-bg.png' WHERE (`id` = '9');
+UPDATE `rent-your-ride`.`vehicle` SET `URL` = 'bmw-530m-bg.png' WHERE (`id` = '10');
+UPDATE `rent-your-ride`.`vehicle` SET `URL` = 'bmw-520-bg.png' WHERE (`id` = '11');
+UPDATE `rent-your-ride`.`vehicle` SET `URL` = 'bmw-118d-bg.png' WHERE (`id` = '12');
+UPDATE `rent-your-ride`.`vehicle` SET `URL` = 'BMW-X3-bg.png' WHERE (`id` = '13');
+UPDATE `rent-your-ride`.`vehicle` SET `URL` = 'bmw-x5-bg.png' WHERE (`id` = '14');
+UPDATE `rent-your-ride`.`vehicle` SET `URL` = 'siaz-sigma-bg.png' WHERE (`id` = '5');
+UPDATE `rent-your-ride`.`vehicle` SET `URL` = 'siaz-delta-bg.png' WHERE (`id` = '6');

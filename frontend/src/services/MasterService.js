@@ -21,4 +21,5 @@ class MasterService {
     }
 }
 
-export default new MasterService()
+const service = new MasterService()
+export default service

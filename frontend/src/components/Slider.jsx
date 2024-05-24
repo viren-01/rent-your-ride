@@ -23,6 +23,7 @@ export default function Slider({ contents }) {
         return (() => {
             clearInterval(setInter)
         })
+        //eslint-disable-next-line
     }, [])
 
     return (

@@ -5,5 +5,5 @@ class BookingService {
         return MasterService.post('/booking/create', params)
     }
 }
-
-export default new BookingService()
+const service = new BookingService()
+export default service

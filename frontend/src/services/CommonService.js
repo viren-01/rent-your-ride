@@ -4,6 +4,11 @@ class CommonService {
     getCityList() {
         return MasterService.get('/common/getCities')
     }
+
+    getVehicleList() {
+        return MasterService.post('/vehicle/getAll')
+    }
 }
 
-export default new CommonService()
+const service = new CommonService()
+export default service
