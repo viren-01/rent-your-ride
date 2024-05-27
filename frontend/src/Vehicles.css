@@ -45,8 +45,18 @@
 @media (max-width: 1170px) {
     .vehicle-grid-ele {
         grid-template-columns: 1fr;
-        width: 21rem;
+        width: 35rem;
    }
+}
+
+@media (max-width: 480px) {
+    .vehicle-grid-ele {
+        width: 23rem;
+   }
+
+   .page-vehicle {
+    padding: 0px !important;
+}
 }
 
 .grid-img {
