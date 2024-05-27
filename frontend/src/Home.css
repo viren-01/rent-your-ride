@@ -1,13 +1,18 @@
 .container {
     display: flex;
     flex-direction: column;
-    height: 91vh;
-    justify-content: center;
+    height: 92vh;
+    justify-content: space-between;
+    box-sizing: border-box;
+    overflow: scroll;
 }
 
 .black,
 .white {
     flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .black {
@@ -16,4 +21,28 @@
 
 .white {
     background-color: white;
+}
+
+@media screen and (max-width: 768px) {
+    .container {
+        height: auto;
+    }
+
+    .black, 
+    .white {
+        flex: none;
+        width: 100%;
+    }
+}
+
+@media screen and (max-height: 768px) {
+    .container {
+        height: auto;
+    }
+
+    .black, 
+    .white {
+        flex: none;
+        height: auto;
+    }
 }
